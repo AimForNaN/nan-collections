@@ -2,7 +2,7 @@
 
 namespace NaN\Collections\Interfaces;
 
-interface CollectionInterface extends \Countable, \IteratorAggregate {
+interface CollectionInterface extends \Countable, \IteratorAggregate, \JsonSerializable {
 	public function any(callable $fn): bool;
 
 	public function every(callable $fn): bool;

@@ -5,9 +5,6 @@ namespace NaN\Collections;
 class Collection implements Interfaces\CollectionInterface {
 	protected array $_data = [];
 
-	/**
-	 * @param mixed ...$data
-	 */
 	public function __construct(
 		mixed ...$data,
 	) {
@@ -40,6 +37,10 @@ class Collection implements Interfaces\CollectionInterface {
 
 	public function implode(string $delimiter): string {
 		return \implode($delimiter, $this->_data);
+	}
+
+	public function jsonSerialize(): array {
+		return $this->toArray();
 	}
 
 	public function map(callable $fn): \Traversable {

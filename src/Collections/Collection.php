@@ -52,6 +52,6 @@ class Collection implements Interfaces\CollectionInterface {
 	}
 
 	public function toArray(): array {
-		return \iterator_to_array($this->getIterator());
+		return \iter\toArray($this->getIterator());
 	}
 }

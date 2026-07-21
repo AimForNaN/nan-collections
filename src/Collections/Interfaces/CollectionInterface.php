@@ -11,6 +11,10 @@ interface CollectionInterface extends \Countable, \IteratorAggregate, \JsonSeria
 
 	public function find(callable $fn): mixed;
 
+	public function getFirst(): mixed;
+
+	public function getLast(): mixed;
+
 	public function implode(string $delimiter): string;
 
 	public function map(callable $fn): \Traversable;

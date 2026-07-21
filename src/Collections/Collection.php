@@ -31,6 +31,14 @@ class Collection implements Interfaces\CollectionInterface {
 		return \iter\search($fn, $this->getIterator());
 	}
 
+	public function getFirst(): mixed {
+		return \iter\search(fn() => true, $this->getIterator());
+	}
+
+	public function getLast(): mixed {
+		return $this->reduce(fn($ret, $item) => $item);
+	}
+
 	public function getIterator(): \Traversable {
 		yield from $this->_data;
 	}

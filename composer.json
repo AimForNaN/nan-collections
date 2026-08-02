@@ -9,7 +9,8 @@
 	},
     "require": {
 		"php": "^8.4",
-		"nikic/iter": "^2.4"
+		"nikic/iter": "^2.4",
+		"psr/http-server-middleware": "^1.0"
 	},
 	"config": {
 		"allow-plugins": {

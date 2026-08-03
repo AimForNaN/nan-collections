@@ -46,11 +46,15 @@ implements
 	public function withoutMiddleware(
 		PsrMiddlewareInterface $middleware
 	): PsrMiddlewareInterface|PsrRequestHandlerInterface {
-		return new static(
+		$clone = new static(
 			...\iter\filter(
 				fn($child) => $middleware !== $child,
 				$this->getIterator(),
 			),
 		);
+
+		$clone->_handler = $this->_handler;
+
+		return $clone;
 	}
 }
